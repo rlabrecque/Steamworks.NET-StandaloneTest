@@ -13,11 +13,11 @@ namespace SteamworksNET_StandaloneTest {
 		static Callback<UserStatsReceived_t> m_UserStatsReceived;
 
 		static void Main(string[] args) {
-			if(!SteamAPI.Init()) {
+			if (!SteamAPI.Init()) {
 				Console.WriteLine("SteamAPI.Init() failed!");
 				return;
 			}
-			
+
 			if (!Packsize.Test()) {
 				Console.WriteLine("You're using the wrong Steamworks.NET Assembly for this platform!");
 				return;
@@ -34,6 +34,12 @@ namespace SteamworksNET_StandaloneTest {
 
 			SteamUserStats.RequestCurrentStats();
 			Console.WriteLine("Reqesting Current Stats");
+
+			{
+				SteamAPICall_t hSteamAPICall = SteamUserStats.GetNumberOfCurrentPlayers();
+				NumberOfCurrentPlayers.Set(hSteamAPICall);
+				Console.WriteLine("GetNumberOfCurrentPlayers() - " + hSteamAPICall);
+			}
 
 			while (true) {
 				// Must be called from the primary thread.
