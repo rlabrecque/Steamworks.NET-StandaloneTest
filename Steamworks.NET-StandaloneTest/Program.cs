@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using Steamworks;
 
@@ -47,7 +44,7 @@ namespace SteamworksNET_StandaloneTest {
 			InitializeCallbacks(); // We do this after SteamAPI.Init() has occured
 
 
-			Console.WriteLine("Reqesting Current Stats - " + SteamUserStats.RequestCurrentStats());
+			Console.WriteLine("Requesting Current Stats - " + SteamUserStats.RequestCurrentStats());
 
 			Console.WriteLine("CurrentGameLanguage: " + SteamApps.GetCurrentGameLanguage());
 			Console.WriteLine("PersonaName: " + SteamFriends.GetPersonaName());
@@ -60,7 +57,7 @@ namespace SteamworksNET_StandaloneTest {
 
 
 			m_NumberOfCurrentPlayers.Set(SteamUserStats.GetNumberOfCurrentPlayers());
-			Console.WriteLine("Reqesting Number of Current Players");
+			Console.WriteLine("Requesting Number of Current Players");
 
 			{
 				SteamAPICall_t hSteamAPICall = SteamUserStats.FindLeaderboard("Quickest Win");
@@ -80,7 +77,7 @@ namespace SteamworksNET_StandaloneTest {
 					}
 					else if (info.Key == ConsoleKey.Spacebar) {
 						SteamUserStats.RequestCurrentStats();
-						Console.WriteLine("Reqesting Current Stats");
+						Console.WriteLine("Requesting Current Stats");
 					}
 					else if (info.Key == ConsoleKey.D1) {
 						SteamAPICall_t hSteamAPICall = SteamUserStats.FindLeaderboard("Quickest Win");
