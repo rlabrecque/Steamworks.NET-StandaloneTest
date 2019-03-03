@@ -1,5 +1,5 @@
- * Riley Labrecque - 2013-2015 - Public Domain
+ * Riley Labrecque - 2013-2019 - Public Domain
  *
  * This software is in the public domain. Where that dedication is not
- * recognized, you are granted a perpetual, irrevokable license to copy
+ * recognized, you are granted a perpetual, irrevocable license to copy
  * and modify these files as you see fit.
